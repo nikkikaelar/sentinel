@@ -2,6 +2,10 @@
 
 **Purpose:** Educational/home‑lab network visibility with privacy‑respecting defaults.
 
+**TL;DR:**  It’s a Raspberry Pi tool that quietly watches your local network for basic chatter (like ARP, DHCP, DNS, and mDNS) and shows live stats and recent events in a simple web dashboard, without saving any actual message contents—just who asked what. 
+
+A Python packet sniffer (Scapy) writes tiny metadata records into SQLite; a FastAPI backend feeds them over REST and WebSockets to a React frontend for real-time charts and tables (with an optional Wi‑Fi probe module and an experimental encrypted chat demo).
+
 ## Features
 - Passive LAN metadata capture: **ARP, DHCP, DNS, mDNS** (no payload storage)
 - Local SQLite storage + REST API + WebSocket live updates
