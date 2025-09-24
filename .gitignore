@@ -1,0 +1,12 @@
+﻿# root
+node_modules
+.DS_Store
+*.log
+
+# vite / react
+app/dist
+app/.vite
+app/.cache
+
+# server build
+server/dist
