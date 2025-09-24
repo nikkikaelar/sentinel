@@ -1,5 +1,7 @@
 ﻿# Sentinel  E2E Secure Messenger (MVP)
 
+ ![](https://i.imgur.com/7VgDOAZ.png)
+
 Minimal endtoend encrypted chat for educational use. Two browser clients exchange public keys (manual/QR), derive a shared key via X25519, and encrypt messages with XChaCha20Poly1305. A dumb WebSocket relay forwards opaque ciphertextno plaintext or keys touch the server.
 
 > **NOT FOR PRODUCTION.** This is a learning artifact to show correct primitives and a documented threat model.
