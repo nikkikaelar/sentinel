@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    network_mode: host   # use host networking to sniff; implies Linux host
+    env_file: env.example
+    volumes:
+      - ./:/workspace
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    restart: unless-stopped

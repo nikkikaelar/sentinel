@@ -1,0 +1,14 @@
+[Unit]
+Description=Pi Sentinel Net API
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/pi-sentinel-net/backend
+EnvironmentFile=/home/pi/pi-sentinel-net/env.example
+ExecStart=/home/pi/pi-sentinel-net/backend/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8088
+Restart=on-failure
+User=pi
+
+[Install]
+WantedBy=multi-user.target

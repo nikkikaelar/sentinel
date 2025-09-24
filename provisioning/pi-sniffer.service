@@ -1,0 +1,15 @@
+[Unit]
+Description=Pi Sentinel Net Sniffer
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/pi-sentinel-net/backend
+EnvironmentFile=/home/pi/pi-sentinel-net/env.example
+ExecStart=/home/pi/pi-sentinel-net/backend/sniffer/run_sniffer.sh
+Restart=on-failure
+User=pi
+# CAP_NET_RAW is needed; run via sudo in wrapper. Alternatively, grant cap to Python (less recommended).
+
+[Install]
+WantedBy=multi-user.target
